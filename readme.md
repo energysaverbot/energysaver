@@ -1,79 +1,60 @@
-# Readme
+# TETC: Maximizing Revenue in Roadside Green Edge Server System
 
-There are two folders:
-Dataset- It contains all the datasets used in the proposed work.
-Code- It contains all the codes for the proposed work.
+This repository contains the codebase and datasets for the proposed work on task scheduling in solar-powered Green Edge Server Systems (GESS) to support autonomous vehicles.
 
-TECT/
-├── readme.txt
-├── Dataset/
-│   ├── readme.md
-│   ├── Single Day/
-│   │   ├── Power/
-│   │   │   ├── power_predicted.csv [predicted solar power throughout the day]
-│   │   │   ├── power_actual_5_percent_deviation.csv [deviation of 5% from the predicted solar power]
-│   │   │   └── power_actual_10_percent_deviation.csv [deviation of 10% from the predicted solar power]
-│   │   └── Task/
-│   │       ├── rho 0.03/ 
-│   │       │   ├── task_predicted.csv predicted task profile throughout the day]
-│   │       │   ├── task_actual_5_percent_deviation.csv [deviation of 5% from the predicted task profile, this file contains tasks that are predicted and actually arrive]
-│   │       │   ├── task_actual_10_percent_deviation.csv [deviation of 10% from the predicted task profile, this file contains tasks that are predicted and actually arrive]
-│   │       │   ├── task_new_5_percent_deviation.csv [deviation of 5% from the predicted task profile, this file contains new unpredicted tasks that arrive]
-│   │       │   └── task_new_10_percent_deviation.csv [deviation of 10% from the predicted task profile, this file contains new unpredicted tasks that arrive]
-│   │       ├── rho 0.05/
-│   │       │   ├── task_predicted.csv
-│   │       │   ├── task_actual_5_percent_deviation.csv
-│   │       │   ├── task_actual_10_percent_deviation.csv
-│   │       │   ├── task_new_5_percent_deviation.csv
-│   │       │   └── task_new_10_percent_deviation.csv
-│   │       ├── rho 0.1/
-│   │       │   ├── task_predicted.csv
-│   │       │   ├── task_actual_5_percent_deviation.csv
-│   │       │   ├── task_actual_10_percent_deviation.csv
-│   │       │   ├── task_new_5_percent_deviation.csv
-│   │       │   └── task_new_10_percent_deviation.csv
-│   │       ├── rho 0.15/
-│   │       │   ├── task_predicted.csv
-│   │       │   ├── task_actual_5_percent_deviation.csv
-│   │       │   ├── task_actual_10_percent_deviation.csv
-│   │       │   ├── task_new_5_percent_deviation.csv
-│   │       │   └── task_new_10_percent_deviation.csv
-│   │       └── rho 0.18/
-│   │           ├── task_predicted.csv
-│   │           ├── task_actual_5_percent_deviation.csv
-│   │           ├── task_actual_10_percent_deviation.csv
-│   │           ├── task_new_5_percent_deviation.csv
-│   │           └── task_new_10_percent_deviation.csv
-│   └── Multiple Day/ [same as before, number of days is 7]
-│       ├── Power/
-│       │   └── power_predicted.csv
-│       └── Task/
-│           ├── rho 0.03/
-│           │   └── task_predicted.csv
-│           ├── rho 0.1/
-│           │   └── task_predicted.csv
-│           └── rho 0.18/
-│               └── task_predicted.csv
-│
-└── Code/
-    ├── readme.txt
-    ├── offline/
-    │   ├── README.txt
-    │   ├── infinitebattery_offline.cpp [Algo 2 + Algo 4]
-    │   ├── finitebattery_offline.cpp [Algo 2 + Algo 6]
-    │   └── a.out
-    ├── online/
-    │   ├── README.txt
-    │   ├── online_solar_finitebattery.cpp [Algo 2 + Algo 6 + Algo 5]
-    │   ├── online_solar_infinite_battery.cpp [Algo 2 + Algo 4 + Algo 5]
-    └── stateofart/ [the names are self explanatory]
-        ├── README.txt
-        ├── NPEDF_finitebattery.cpp
-        ├── NPEDF_infinitebattery.cpp
-        ├── EA_finitebattery.cpp
-        ├── EA_infinitebattery.cpp
-        ├── asap_HUF_finitebattery.cpp
-        ├── asap_HUF_infinitebattery.cpp
-        ├── asap_LUF_finitebattery.cpp
-        └── asap_LUF_infinitebattery.cpp
+---
 
+## 📁 Directory Structure
+
+### 1. `Dataset/`
+Contains all the datasets used in the experiments.
+
+#### └─ `Single Day/`
+- **Power/**
+  - `power_predicted.csv`: Predicted solar power profile throughout the day.
+  - `power_actual_5_percent_deviation.csv`: 5% deviation from predicted solar power.
+  - `power_actual_10_percent_deviation.csv`: 10% deviation from predicted solar power.
+
+- **Task/**
+  - Each `rho` folder (e.g., `rho 0.03/`, `rho 0.05/`, ...) contains:
+    - `task_predicted.csv`: Predicted task profile.
+    - `task_actual_5_percent_deviation.csv`: 5% deviation for existing tasks.
+    - `task_actual_10_percent_deviation.csv`: 10% deviation for existing tasks.
+    - `task_new_5_percent_deviation.csv`: 5% deviation with new unpredicted tasks.
+    - `task_new_10_percent_deviation.csv`: 10% deviation with new unpredicted tasks.
+
+#### └─ `Multiple Day/`
+- **Power/**
+  - `power_predicted.csv`: Predicted solar power across 7 days.
+- **Task/**
+  - Folders for different rho values (e.g., `rho 0.03`, `rho 0.1`, `rho 0.18`) contain:
+    - `task_predicted.csv`: Multi-day task profile.
+
+---
+
+### 2. `Code/`
+Contains the implementation of all scheduling algorithms.
+
+#### └─ `offline/`
+- `infinitebattery_offline.cpp`: Implements Algo 2 + Algo 4.
+- `finitebattery_offline.cpp`: Implements Algo 2 + Algo 6.
+
+#### └─ `online/`
+- `online_solar_infinite_battery.cpp`: Implements Algo 2 + Algo 4 + Algo 5.
+- `online_solar_finitebattery.cpp`: Implements Algo 2 + Algo 6 + Algo 5.
+
+#### └─ `stateofart/`
+Baseline methods from the literature:
+- `NPEDF_*`: Non-preemptive Earliest Deadline First (finite/infinite battery).
+- `EA_*`: Execute-on-Arrival methods.
+- `asap_HUF_*`: As Soon As Possible – Highest Utilization First.
+- `asap_LUF_*`: As Soon As Possible – Lowest Utilization First.
+
+---
+
+## 🔧 Usage
+
+- **Compile the C++ files** with `g++`:
+  ```bash
+  g++ infinitebattery_offline.cpp -o infinitebattery
+  ./infinitebattery
