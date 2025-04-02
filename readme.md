@@ -1,4 +1,4 @@
-# TETC: Maximizing Revenue in Roadside Green Edge Server System
+# Maximizing Revenue in Roadside Green Edge Server System
 
 This repository contains the codebase and datasets for the proposed work on task scheduling in solar-powered Green Edge Server Systems (GESS) to support autonomous vehicles.
 
