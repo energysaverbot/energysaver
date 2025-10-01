@@ -58,3 +58,6 @@ Baseline methods from the literature:
   ```bash
   g++ infinitebattery_offline.cpp -o infinitebattery
   ./infinitebattery
+
+## Preprint version
+https://arxiv.org/abs/2410.16724
