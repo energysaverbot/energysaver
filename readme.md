@@ -149,8 +149,6 @@ The scheduler optimizes based on available solar energy and the finite storage c
 
 ### Actual Scenarios ☀️🌤️☀️🌦️🌤️🌥️🌦️
 
-### `Online Scheduling`
-
 #### **6️⃣ Actual Solar Power (Infinite Battery Case)**
 ![Actual Power Finite](actual_power_finite.png)
 
@@ -159,12 +157,16 @@ It may differ slightly from the predicted curve due to uncertainty or environmen
 
 ---
 
+### `Online Scheduling`
+
 #### **7️⃣ Online Scheduling — Infinite Battery**
 ![Algorithm 4_5 — Infinite Battery Online](alg4_5.png)
 
 This figure shows the **online version** of the infinite-battery case, where scheduling decisions are taken adaptively as actual solar input is revealed in real-time.
 
 ---
+
+### Actual Scenarios ☀️🌤️☀️🌦️🌤️🌥️🌦️
 
 #### **8️⃣ Actual Solar Power (Finite Battery Case)**
 ![Actual Power Infinite](actual_power_infinite.png)
@@ -173,6 +175,8 @@ This figure shows the **actual solar energy availability** for the finite-batter
 Despite variations from the predicted solar profile, the scheduler dynamically handles charging, discharging, and task placement decisions.
 
 ---
+
+### `Online Scheduling`
 
 #### **9️⃣ Finite Battery — Online Scheduling (5 Capacities)**
 
