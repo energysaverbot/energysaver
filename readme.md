@@ -138,7 +138,7 @@ The scheduler optimizes based on available solar energy and the finite storage c
 ### ⚡ Actual Scenarios
 
 #### **5️⃣ Actual Solar Power (Infinite Battery Case)**
-![Actual Power Infinite](actual_power_infinite.png)
+![Actual Power Finite](actual_power_finite.png)
 
 This plot represents the **actual observed solar input** ($S_t$) for the infinite-battery case.  
 It may differ slightly from the predicted curve due to uncertainty or environmental variation.
@@ -153,7 +153,7 @@ This figure shows the **online version** of the infinite-battery case, where sch
 ---
 
 #### **7️⃣ Actual Solar Power (Finite Battery Case)**
-![Actual Power Finite](actual_power_finite.png)
+![Actual Power Infinite](actual_power_infinite.png)
 
 This figure shows the **actual solar energy availability** for the finite-battery case.  
 Despite variations from the predicted solar profile, the scheduler dynamically handles charging, discharging, and task placement decisions.
