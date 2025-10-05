@@ -59,7 +59,7 @@ Baseline methods from the literature:
   g++ infinitebattery_offline.cpp -o infinitebattery
   ./infinitebattery
 
-# ☀️ Toy Example: Solar-Powered Task Scheduling — Predicted vs. Actual Scenarios
+## ☀️ Toy Example: Solar-Powered Task Scheduling — Predicted vs. Actual Scenarios
 
 This repository presents a **toy example** that demonstrates how solar-powered task scheduling behaves under **predicted** and **actual** conditions across various battery capacities.
 
@@ -71,7 +71,7 @@ It showcases the scheduling and utilization patterns across different algorithms
 
 ---
 
-## ⚙️ Experimental Setup and Simplifications
+### ⚙️ Experimental Setup and Simplifications
 
 To focus on visualization and conceptual understanding (not numeric optimization), the following simplifications are made:
 
@@ -92,16 +92,16 @@ The example also automatically accounts for **different task prediction errors, 
 
 ---
 
-## 🌤️ Predicted Inputs
+### 🌤️ Predicted Inputs
 
-### **1️⃣ Predicted Incoming Solar Power**
+#### **1️⃣ Predicted Incoming Solar Power**
 ![Predicted Solar Power](pred_power.png)
 
 This plot shows the **predicted solar energy input** ($S_t$) at each time slot — representing the renewable power available to the system.
 
 ---
 
-### **2️⃣ Predicted Task Arrivals and Validity**
+#### **2️⃣ Predicted Task Arrivals and Validity**
 ![Predicted Tasks](incomingpredictedtasks.png)
 
 This figure visualizes the **predicted task arrivals** and their **validity periods** across consecutive slots.  
@@ -111,9 +111,9 @@ Each cell represents one task (τ₁, τ₂, …), and the top number shows the 
 
 ---
 
-## 🔋 Offline Scheduling
+### 🔋 Offline Scheduling
 
-### **3️⃣ Infinite Battery Case (Offline Scheduling)**
+#### **3️⃣ Infinite Battery Case (Offline Scheduling)**
 ![Algorithm 4 — Infinite Battery](alg4.png)
 
 The **offline schedule for infinite battery (TS-GES-SIB)** assumes that all surplus solar energy can be stored and reused later.  
@@ -121,7 +121,7 @@ This creates a balanced power utilization pattern while ensuring all predicted t
 
 ---
 
-### **4️⃣ Finite Battery Cases (Offline Scheduling)**
+#### **4️⃣ Finite Battery Cases (Offline Scheduling)**
 
 Since real batteries have limited capacity, we visualize **five different capacities**:  
 **8, 16, 17, 18, and 19 units (W-time-slot)**.
@@ -135,9 +135,9 @@ The scheduler optimizes based on available solar energy and the finite storage c
 
 ---
 
-## ⚡ Actual Scenarios
+### ⚡ Actual Scenarios
 
-### **5️⃣ Actual Solar Power (Infinite Battery Case)**
+#### **5️⃣ Actual Solar Power (Infinite Battery Case)**
 ![Actual Power Infinite](actual_power_infinite.png)
 
 This plot represents the **actual observed solar input** ($S_t$) for the infinite-battery case.  
@@ -145,14 +145,14 @@ It may differ slightly from the predicted curve due to uncertainty or environmen
 
 ---
 
-### **6️⃣ Online Scheduling — Infinite Battery**
+#### **6️⃣ Online Scheduling — Infinite Battery**
 ![Algorithm 4_5 — Infinite Battery Online](alg4_5.png)
 
 This figure shows the **online version** of the infinite-battery case, where scheduling decisions are taken adaptively as actual solar input is revealed in real-time.
 
 ---
 
-### **7️⃣ Actual Solar Power (Finite Battery Case)**
+#### **7️⃣ Actual Solar Power (Finite Battery Case)**
 ![Actual Power Finite](actual_power_finite.png)
 
 This figure shows the **actual solar energy availability** for the finite-battery case.  
@@ -160,7 +160,7 @@ Despite variations from the predicted solar profile, the scheduler dynamically h
 
 ---
 
-### **8️⃣ Finite Battery — Online Scheduling (5 Capacities)**
+#### **8️⃣ Finite Battery — Online Scheduling (5 Capacities)**
 
 The **online version** of the finite-battery case is evaluated for the same 5 capacities  
 (**8, 16, 17, 18, 19 units**). Each figure corresponds to adaptive scheduling at runtime.
@@ -173,7 +173,7 @@ Even with prediction differences and limited battery capacity, the online algori
 
 ---
 
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 
 - The **predicted** and **actual** solar/task profiles differ, but the scheduling algorithm adapts gracefully.  
 - **Infinite battery** ensures smooth utilization, while **finite batteries** exhibit constrained but controlled performance.  
@@ -184,7 +184,7 @@ Even with prediction differences and limited battery capacity, the online algori
 
 ---
 
-## 📦 Repository Structure
+### 📦 Repository Structure
 
 
 
