@@ -59,82 +59,134 @@ Baseline methods from the literature:
   g++ infinitebattery_offline.cpp -o infinitebattery
   ./infinitebattery
 
-# ☀️ Toy Example: Solar-Powered Task Scheduling Visualization
+# ☀️ Toy Example: Solar-Powered Task Scheduling — Predicted vs. Actual Scenarios
 
-This repository provides a **toy example** demonstrating how solar power availability, task validity, and scheduling evolve over discrete time slots under different algorithmic settings.  
-It visualizes how the system schedules tasks in the presence (or absence) of solar energy and battery support.
+This repository presents a **toy example** that demonstrates how solar-powered task scheduling behaves under **predicted** and **actual** conditions across various battery capacities.
 
----
-
-## 📁 Figures Overview
-
-### 1️⃣ Incoming Solar Power (Predicted)
-![Incoming Solar Power](pred_power.png)
-
-**Description:**  
-This figure shows the **predicted incoming solar power** (`S_t`) at each time slot.  
-It represents the renewable energy available to the system over time.
+It showcases the scheduling and utilization patterns across different algorithms:
+- **Predicted Inputs** (Solar Power, Task Arrivals)
+- **Offline Scheduling** (Infinite and Finite Battery)
+- **Online Scheduling** (Infinite and Finite Battery)
+- **Actual Power Conditions**
 
 ---
 
-### 2️⃣ Incoming Predicted Tasks and Their Validity
-![Incoming Predicted Tasks](incomingpredictedtasks.png)
+## ⚙️ Experimental Setup and Simplifications
 
-**Description:**  
-This figure visualizes the **predicted tasks arriving at each time slot** and their **validity** extending across adjacent slots.  
-- **Dark Blue Cells:** Tasks that arrived in the current time slot.  
-- **Light Blue Cells:** Tasks carried over from the previous slot (still valid).  
-Each cell corresponds to one task (τ₁, τ₂, …), and the total number of valid tasks is shown on top of each bar.
+To focus on visualization and conceptual understanding (not numeric optimization), the following simplifications are made:
 
----
+| Parameter | Description | Value (Assumed for Ease of Calculation) |
+|:----------:|:-------------|:--------------------------------------|
+| $P_S$ | Static Power (Base Power) | 0 |
+| $U^{max}$ | Maximum Utilization per Slot | 3 |
+| $P^{max}$ | Maximum Power Capacity | 27 |
+| Task Utilization | All tasks have utilization = 1 |
+| $P_{avg}$ | Average Power (Formula Below) | **8 (toy case)** instead of actual 5 |
 
-### 3️⃣ Algorithm 2 (No Battery): Solar Availability and Scheduled Tasks
-![Algorithm 2](alg2.png)
+\[
+P_{avg} \gets \frac{\sum_{t=1}^{T_{total}} F_P(U_t)}{T_{total}} = \frac{35}{7} = 5
+\]
+For ease of visualization, we use $P_{avg}=8$ in this toy setup.
 
-**Description:**  
-This plot represents **Algorithm 2 (No Battery)**, where tasks are scheduled only when solar power is directly available.  
-It shows how power consumption (`P_t`) corresponds to solar input (`S_t`) at each slot.
-
----
-
-### 4️⃣ Algorithm 2 + Algorithm 4: Offline Schedule for Infinite Battery (TS-GES-SIB)
-![Algorithm 4](alg4.png)
-
-**Description:**  
-This figure corresponds to the **offline scheduling** scenario with an **infinite battery**.  
-Excess solar energy from earlier slots can be stored and used later, ensuring smoother task execution and balanced utilization across time.
+The example also automatically accounts for **different task prediction errors, utilization demands, and variable deadlines**, though these are simplified here.
 
 ---
 
-### 5️⃣ Algorithm 2 + Algorithm 6 + Algorithm 5: Online Schedule for Fixed Battery (TS-GES-SFB)
-![Algorithm 6](alg6.png)
+## 🌤️ Predicted Inputs
 
-**Description:**  
-This plot shows the **online scheduling** case with a **fixed battery capacity**, where task execution adapts dynamically based on real-time solar input and storage limits.
+### **1️⃣ Predicted Incoming Solar Power**
+![Predicted Solar Power](pred_power.png)
 
----
-
-## 🧠 Concept Summary
-
-| Symbol | Meaning |
-|:-------:|:--------|
-| `S_t` | Incoming solar power at time slot *t* |
-| `P_t` | Power consumption at time slot *t* |
-| `U_t` | System utilization at time slot *t* |
-| `τ_i` | Task *i* |
+This plot shows the **predicted solar energy input** ($S_t$) at each time slot — representing the renewable power available to the system.
 
 ---
 
-## ⚙️ How to Reproduce the Plots
+### **2️⃣ Predicted Task Arrivals and Validity**
+![Predicted Tasks](incomingpredictedtasks.png)
 
-To regenerate the figures locally, run the provided Python scripts in sequence (each corresponds to one figure):
+This figure visualizes the **predicted task arrivals** and their **validity periods** across consecutive slots.  
+- **Dark Blue:** Newly arrived tasks.  
+- **Light Blue:** Tasks valid from the previous slot.  
+Each cell represents one task (τ₁, τ₂, …), and the top number shows the total number of valid tasks per time slot.
 
-```bash
-python plot_solar_power.py
-python plot_incoming_tasks.py
-python plot_algorithm2.py
-python plot_algorithm4.py
-python plot_algorithm6.py
+---
+
+## 🔋 Offline Scheduling
+
+### **3️⃣ Infinite Battery Case (Offline Scheduling)**
+![Algorithm 4 — Infinite Battery](alg4.png)
+
+The **offline schedule for infinite battery (TS-GES-SIB)** assumes that all surplus solar energy can be stored and reused later.  
+This creates a balanced power utilization pattern while ensuring all predicted tasks are scheduled efficiently.
+
+---
+
+### **4️⃣ Finite Battery Cases (Offline Scheduling)**
+
+Since real batteries have limited capacity, we visualize **five different capacities**:  
+**8, 16, 17, 18, and 19 units (W-time-slot)**.
+
+| 8 Units | 16 Units | 17 Units | 18 Units | 19 Units |
+|:--------:|:---------:|:---------:|:---------:|:---------:|
+| ![8-unit](alg6_8_unit.png) | ![16-unit](alg6_16_unit.png) | ![17-unit](alg6_17_unit.png) | ![18-unit](alg6_18_unit.png) | ![19-unit](alg6_19_unit.png) |
+
+Each bar represents the **power consumption at time t ($P_t$)** with corresponding **scheduled tasks and utilization ($U_t$)**.  
+The scheduler optimizes based on available solar energy and the finite storage capacity.
+
+---
+
+## ⚡ Actual Scenarios
+
+### **5️⃣ Actual Solar Power (Infinite Battery Case)**
+![Actual Power Infinite](actual_power_infinite.png)
+
+This plot represents the **actual observed solar input** ($S_t$) for the infinite-battery case.  
+It may differ slightly from the predicted curve due to uncertainty or environmental variation.
+
+---
+
+### **6️⃣ Online Scheduling — Infinite Battery**
+![Algorithm 4_5 — Infinite Battery Online](alg4_5.png)
+
+This figure shows the **online version** of the infinite-battery case, where scheduling decisions are taken adaptively as actual solar input is revealed in real-time.
+
+---
+
+### **7️⃣ Actual Solar Power (Finite Battery Case)**
+![Actual Power Finite](actual_power_finite.png)
+
+This figure shows the **actual solar energy availability** for the finite-battery case.  
+Despite variations from the predicted solar profile, the scheduler dynamically handles charging, discharging, and task placement decisions.
+
+---
+
+### **8️⃣ Finite Battery — Online Scheduling (5 Capacities)**
+
+The **online version** of the finite-battery case is evaluated for the same 5 capacities  
+(**8, 16, 17, 18, 19 units**). Each figure corresponds to adaptive scheduling at runtime.
+
+| 8 Units | 16 Units | 17 Units | 18 Units | 19 Units |
+|:--------:|:---------:|:---------:|:---------:|:---------:|
+| ![8-unit](alg6_5_8_unit.png) | ![16-unit](alg6_5_16_unit.png) | ![17-unit](alg6_5_17_unit.png) | ![18-unit](alg6_5_18_unit.png) | ![19-unit](alg6_5_19_unit.png) |
+
+Even with prediction differences and limited battery capacity, the online algorithms efficiently adjust charging/discharging and task scheduling to maintain feasibility.
+
+---
+
+## 🧠 Key Takeaways
+
+- The **predicted** and **actual** solar/task profiles differ, but the scheduling algorithm adapts gracefully.  
+- **Infinite battery** ensures smooth utilization, while **finite batteries** exhibit constrained but controlled performance.  
+- The toy example intentionally simplifies:
+  - Constant utilization (1 per task)  
+  - Fixed $P_S=0$, $U^{max}=3$, $P^{max}=27$  
+  - Average power $P_{avg}=8$ (toy assumption)  
+
+---
+
+## 📦 Repository Structure
+
+
 
 
 ## Preprint version
