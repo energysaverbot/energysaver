@@ -110,6 +110,19 @@ This figure visualizes the **predicted task arrivals** and their **validity peri
 Each cell represents one task (τ₁, τ₂, …), and the top number shows the total number of valid tasks per time slot.
 
 ---
+### ⚡ Intermediate Step: No-Battery Scheduling
+
+#### **3️⃣ Algorithm 2 (No Battery): Solar Availability and Scheduled Tasks**
+![Algorithm 2](alg2.png)
+
+This is an **intermediate scheduling step** where no battery is used.  
+Tasks are scheduled **only when solar energy is directly available**, ensuring that:
+- Power consumption ($P_t$) strictly follows available solar power.
+- Idle slots occur when no solar power is predicted.
+
+This baseline serves as the foundation for later algorithms that introduce energy storage.
+
+___
 
 ### 🔋 Offline Scheduling
 
