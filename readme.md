@@ -83,9 +83,8 @@ To focus on visualization and conceptual understanding (not numeric optimization
 | Task Utilization | All tasks have utilization = 1 | $u_i$ = 1, $\forall$ i
 | $P_{avg}$ | Average Power (Formula Below) | **8 (toy case)** instead of actual 5 for this case |
 
-\[
-P_{avg} \gets \frac{\sum_{t=1}^{T_{total}} F_P(U_t)}{T_{total}} = \frac{35}{7} = 5
-\]
+$P_{avg} \gets \frac{\sum_{t=1}^{T_{total}} F_P(U_t)}{T_{total}} = \frac{35}{7} = 5$
+
 For ease of visualization, we use $P_{avg}=8$ in this toy setup.
 
 The example also automatically accounts for **different task prediction errors, utilization demands, and variable deadlines**, though these are simplified here.
