@@ -176,8 +176,8 @@ Despite variations from the predicted solar profile, the scheduler dynamically h
 
 #### **9️⃣ Finite Battery — Online Scheduling (5 Capacities)**
 
-The **online version** of the finite-battery case is evaluated for the same 5 capacities  
-(**8, 16, 17, 18, 19 units**). Each figure corresponds to adaptive scheduling at runtime.
+Since real batteries have limited capacity, we visualize **five different capacities**:  
+**8, 16, 17, 18, and 19 units (W-time-slot)**.
 
 | 8 Units | 16 Units | 17 Units | 18 Units | 19 Units |
 |:--------:|:---------:|:---------:|:---------:|:---------:|
