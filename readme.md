@@ -65,7 +65,7 @@ This repository presents a **toy example** that demonstrates how solar-powered t
 
 It showcases the scheduling and utilization patterns across different algorithms:
 - **Offline Scheduling** (Infinite and Finite Battery) using **Predicted Inputs** (Solar Power, Task Arrivals)
-- **Online Scheduling** (Infinite and Finite Battery) using **Actual Power Conditions**
+- **Online Scheduling** (Infinite and Finite Battery) using **Actual Power Conditions** (Solar Power, Task Arrivals)
 
 ---
 
