@@ -198,5 +198,5 @@ Even with prediction differences and limited battery capacity, the online algori
 
 ---
 
-## Preprint version
+## 🔗 Preprint version
 https://arxiv.org/abs/2410.16724
