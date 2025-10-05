@@ -109,7 +109,7 @@ This figure visualizes the **predicted task arrivals** and their **validity peri
 Each cell represents one task (τ₁, τ₂, …), and the top number shows the total number of valid tasks per time slot.
 
 ---
-### `Intermediate Step: No-Battery Scheduling/`
+### `Intermediate Step: No-Battery Scheduling`
 
 #### **3️⃣ Algorithm 2 (No Battery): Solar Availability and Scheduled Tasks**
 ![Algorithm 2](alg2.png)
