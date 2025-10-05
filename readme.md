@@ -80,7 +80,7 @@ To focus on visualization and conceptual understanding (not numeric optimization
 | $P_S$ | Static Power (Base Power) | 0 |
 | $U^{max}$ | Maximum Utilization per Slot | 3 |
 | $P^{max}$ | Maximum Power Capacity | 27 |
-| Task Utilization | All tasks have utilization = 1 |
+| Task Utilization | All tasks have utilization = 1 | $u_i$ = 1, $\forall$ i
 | $P_{avg}$ | Average Power (Formula Below) | **8 (toy case)** instead of actual 5 for this case |
 
 \[
