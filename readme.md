@@ -64,10 +64,8 @@ Baseline methods from the literature:
 This repository presents a **toy example** that demonstrates how solar-powered task scheduling behaves under **predicted** and **actual** conditions across various battery capacities.
 
 It showcases the scheduling and utilization patterns across different algorithms:
-- **Predicted Inputs** (Solar Power, Task Arrivals)
-- **Offline Scheduling** (Infinite and Finite Battery)
-- **Online Scheduling** (Infinite and Finite Battery)
-- **Actual Power Conditions**
+- **Offline Scheduling** (Infinite and Finite Battery) using **Predicted Inputs** (Solar Power, Task Arrivals)
+- **Online Scheduling** (Infinite and Finite Battery) using **Actual Power Conditions**
 
 ---
 
