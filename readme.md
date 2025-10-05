@@ -52,14 +52,16 @@ Baseline methods from the literature:
 
 ---
 
-## 🔧 Usage
+## 3. `Usage/`
 
 - **Compile the C++ files** with `g++`:
   ```bash
   g++ infinitebattery_offline.cpp -o infinitebattery
   ./infinitebattery
 
-## 3. `Toy Example: Solar-Powered Task Scheduling — Predicted vs. Actual Scenarios/`
+## Toy Example: Solar-Powered Task Scheduling — Predicted vs. Actual Scenarios
+
+☀️🌤️🌦️🌤️🌥️🌦️☀️
 
 This repository presents a **toy example** that demonstrates how solar-powered task scheduling behaves under **predicted** and **actual** conditions across various battery capacities.
 
@@ -92,7 +94,7 @@ The example also automatically accounts for **different task prediction errors, 
 
 ---
 
-### 🌤️ Predicted Inputs
+### Predicted Inputs ☀️🌤️🌦️🌤️🌥️🌦️☀️
 
 #### **1️⃣ Predicted Incoming Solar Power**
 ![Predicted Solar Power](pred_power.png)
@@ -110,7 +112,7 @@ This figure visualizes the **predicted task arrivals** and their **validity peri
 Each cell represents one task (τ₁, τ₂, …), and the top number shows the total number of valid tasks per time slot.
 
 ---
-### ⚡ Intermediate Step: No-Battery Scheduling
+### `Intermediate Step: No-Battery Scheduling/`
 
 #### **3️⃣ Algorithm 2 (No Battery): Solar Availability and Scheduled Tasks**
 ![Algorithm 2](alg2.png)
@@ -124,7 +126,7 @@ This baseline serves as the foundation for later algorithms that introduce energ
 
 ___
 
-### 🔋 Offline Scheduling
+### `Offline Scheduling/`
 
 #### **4️⃣ Infinite Battery Case (Offline Scheduling)**
 ![Algorithm 4 — Infinite Battery](alg4.png)
@@ -148,7 +150,9 @@ The scheduler optimizes based on available solar energy and the finite storage c
 
 ---
 
-### ⚡ Actual Scenarios
+### `Online Scheduling/`
+
+### Actual Scenarios ☀️🌤️☀️🌦️🌤️🌥️🌦️
 
 #### **6️⃣ Actual Solar Power (Infinite Battery Case)**
 ![Actual Power Finite](actual_power_finite.png)
