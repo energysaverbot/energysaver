@@ -126,7 +126,7 @@ ___
 
 ### 🔋 Offline Scheduling
 
-#### **3️⃣ Infinite Battery Case (Offline Scheduling)**
+#### **4️⃣ Infinite Battery Case (Offline Scheduling)**
 ![Algorithm 4 — Infinite Battery](alg4.png)
 
 The **offline schedule for infinite battery (TS-GES-SIB)** assumes that all surplus solar energy can be stored and reused later.  
@@ -134,7 +134,7 @@ This creates a balanced power utilization pattern while ensuring all predicted t
 
 ---
 
-#### **4️⃣ Finite Battery Cases (Offline Scheduling)**
+#### **5️⃣ Finite Battery Cases (Offline Scheduling)**
 
 Since real batteries have limited capacity, we visualize **five different capacities**:  
 **8, 16, 17, 18, and 19 units (W-time-slot)**.
@@ -150,7 +150,7 @@ The scheduler optimizes based on available solar energy and the finite storage c
 
 ### ⚡ Actual Scenarios
 
-#### **5️⃣ Actual Solar Power (Infinite Battery Case)**
+#### **6️⃣ Actual Solar Power (Infinite Battery Case)**
 ![Actual Power Finite](actual_power_finite.png)
 
 This plot represents the **actual observed solar input** ($S_t$) for the infinite-battery case.  
@@ -158,14 +158,14 @@ It may differ slightly from the predicted curve due to uncertainty or environmen
 
 ---
 
-#### **6️⃣ Online Scheduling — Infinite Battery**
+#### **7️⃣ Online Scheduling — Infinite Battery**
 ![Algorithm 4_5 — Infinite Battery Online](alg4_5.png)
 
 This figure shows the **online version** of the infinite-battery case, where scheduling decisions are taken adaptively as actual solar input is revealed in real-time.
 
 ---
 
-#### **7️⃣ Actual Solar Power (Finite Battery Case)**
+#### **8️⃣ Actual Solar Power (Finite Battery Case)**
 ![Actual Power Infinite](actual_power_infinite.png)
 
 This figure shows the **actual solar energy availability** for the finite-battery case.  
@@ -173,7 +173,7 @@ Despite variations from the predicted solar profile, the scheduler dynamically h
 
 ---
 
-#### **8️⃣ Finite Battery — Online Scheduling (5 Capacities)**
+#### **9️⃣ Finite Battery — Online Scheduling (5 Capacities)**
 
 The **online version** of the finite-battery case is evaluated for the same 5 capacities  
 (**8, 16, 17, 18, 19 units**). Each figure corresponds to adaptive scheduling at runtime.
