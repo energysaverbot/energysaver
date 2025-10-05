@@ -187,7 +187,7 @@ Even with prediction differences and limited battery capacity, the online algori
 
 ---
 
-### 🧠 Key Takeaways
+#### **1️⃣0️⃣ Key Takeaways**
 
 - The **predicted** and **actual** solar/task profiles differ, but the scheduling algorithm adapts gracefully.  
 - **Infinite battery** ensures smooth utilization, while **finite batteries** exhibit constrained but controlled performance.  
