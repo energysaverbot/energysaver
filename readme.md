@@ -81,7 +81,7 @@ To focus on visualization and conceptual understanding (not numeric optimization
 | $U^{max}$ | Maximum Utilization per Slot | 3 |
 | $P^{max}$ | Maximum Power Capacity | 27 |
 | Task Utilization | All tasks have utilization = 1 |
-| $P_{avg}$ | Average Power (Formula Below) | **8 (toy case)** instead of actual 5 |
+| $P_{avg}$ | Average Power (Formula Below) | **8 (toy case)** instead of actual 5 for this case |
 
 \[
 P_{avg} \gets \frac{\sum_{t=1}^{T_{total}} F_P(U_t)}{T_{total}} = \frac{35}{7} = 5
