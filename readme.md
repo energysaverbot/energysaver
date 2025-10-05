@@ -59,7 +59,7 @@ Baseline methods from the literature:
   g++ infinitebattery_offline.cpp -o infinitebattery
   ./infinitebattery
 
-## ☀️ Toy Example: Solar-Powered Task Scheduling — Predicted vs. Actual Scenarios
+## 3. `Toy Example: Solar-Powered Task Scheduling — Predicted vs. Actual Scenarios/`
 
 This repository presents a **toy example** that demonstrates how solar-powered task scheduling behaves under **predicted** and **actual** conditions across various battery capacities.
 
@@ -197,5 +197,5 @@ Even with prediction differences and limited battery capacity, the online algori
 
 ---
 
-## Preprint version
+## 4. `Preprint version/`
 https://arxiv.org/abs/2410.16724
