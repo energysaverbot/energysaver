@@ -59,9 +59,9 @@ Baseline methods from the literature:
   g++ infinitebattery_offline.cpp -o infinitebattery
   ./infinitebattery
 
-## Toy Example: Solar-Power Charging-Discharging Scheduling
+## Sample Example: Solar-Power Charging-Discharging Scheduling
 
-This repository presents a **toy example** that demonstrates how solar-powered task scheduling behaves under **predicted** and **actual** conditions across various battery capacities.
+This repository presents a **Sample example** that demonstrates how solar-powered task scheduling behaves under **predicted** and **actual** conditions across various battery capacities.
 
 It showcases the scheduling and utilization patterns across different algorithms:
 - **Offline Scheduling** (Infinite and Finite Battery) using **Predicted Inputs** (Solar Power, Task Arrivals)
@@ -79,11 +79,11 @@ To focus on visualization and conceptual understanding (not numeric optimization
 | $U^{max}$ | Maximum Utilization per Slot | 3 |
 | $P^{max}$ | Maximum Power Capacity | 27 |
 | Task Utilization | All tasks have utilization = 1 | $u_i$ = 1, $\forall$ i
-| $P_{avg}$ | Average Power (Formula Below) | **8 (toy case)** instead of actual 5 for this case |
+| $P_{avg}$ | Average Power (Formula Below) | **8 (sample case)** instead of actual 5 for this case |
 
 $P_{avg} \gets \frac{\sum_{t=1}^{T_{total}} F_P(U_t)}{T_{total}} = \frac{35}{7} = 5$
 
-For ease of visualization, we use $P_{avg}=8$ in this toy setup.
+For ease of visualization, we use $P_{avg}=8$ in this sample setup.
 
 The example also automatically accounts for **different task prediction errors, utilization demands, and variable deadlines**, though these are simplified here.
 
@@ -193,10 +193,10 @@ Even with prediction differences and limited battery capacity, the online algori
 
 - The **predicted** and **actual** solar/task profiles differ, but the scheduling algorithm adapts gracefully.  
 - **Infinite battery** ensures smooth utilization, while **finite batteries** exhibit constrained but controlled performance.  
-- The toy example intentionally simplifies:
+- The sample example intentionally simplifies:
   - Constant utilization (1 per task)  
   - Fixed $P_S=0$, $U^{max}=3$, $P^{max}=27$  
-  - Average power $P_{avg}=8$ (toy assumption)  
+  - Average power $P_{avg}=8$ (sample assumption)  
 
 ---
 
